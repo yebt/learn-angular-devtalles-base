@@ -4,30 +4,12 @@
   </hgroup>
 
   <section class="grid">
-    <form>
-      <h4>New</h4>
-      <label>
-        Name
-        <input
-          name="first_name" placeholder="Magin Bhu" autocomplete="given-name"
-          [value]="newCharacterName()"
-          #txtName
-          (input)="newCharacterName.set(txtName.value)"
-        />
-      </label>
+    <div>
+      <dragonball-character-add
+        (onNewCharacter)="addCharacter($event)"
+      />
+    </div>
 
-      <label>
-        Power
-        <input name="skill_name" placeholder="Gum expantion"
-          [value]="newCharacterPower()"
-          #txtPower
-          (input)="newCharacterPower.set(+txtPower.value)"
-        />
-      </label>
-
-      <input type="button" value="Save" (click)="addCharacter()" />
-    </form>
-
-      <dragonball-character-list [characters]="characters()" />
+    <dragonball-character-list listName="List of characters" [characters]="characters()" />
   </section>
 </article>

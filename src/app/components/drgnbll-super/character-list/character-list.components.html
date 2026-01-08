@@ -1,5 +1,5 @@
 <article>
-  <h4>List strong characters</h4>
+  <h4>{{ listName() }}</h4>
   <ul>
     @for (chrctr of characters(); track chrctr.id; let idx = $index) {
       @if (chrctr.power > 1000) {

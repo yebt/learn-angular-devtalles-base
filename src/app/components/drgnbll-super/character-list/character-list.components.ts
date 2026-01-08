@@ -7,4 +7,5 @@ import { BCharacter } from '../../../interfaces/character.interface';
 })
 export class CharacterList {
   characters = input.required<BCharacter[]>()
+  listName = input.required<string>()
 }
