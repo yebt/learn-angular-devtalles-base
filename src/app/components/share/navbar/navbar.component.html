@@ -1,0 +1,45 @@
+<style>
+  nav a.active {
+    font-weight: bold;
+  }
+</style>
+<header class="container">
+  <nav>
+    <ul>
+      <li>
+        <a href="#" class="contrast">
+          <strong>Acme Corp</strong>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="secondary active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          counter
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/hero']"
+          [routerLinkActive]="'secondary active'"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          hero
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/drgnbll"
+          routerLinkActive="secondary active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          drgnbll
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

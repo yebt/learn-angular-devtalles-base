@@ -1,0 +1,35 @@
+<article>
+  <hgroup>
+    <h1>Drgn bll</h1>
+  </hgroup>
+
+  <section class="grid">
+    <form>
+      <h4>New</h4>
+      <label>
+        Name
+        <input name="first_name" placeholder="Magin Bhu" autocomplete="given-name" />
+      </label>
+
+      <label>
+        Skill
+        <input name="skill_name" placeholder="Gum expantion" />
+      </label>
+
+      <input type="submit" value="Save" />
+    </form>
+
+    <article>
+      <h4>List</h4>
+      <ul>
+        @for (chrctr of characters(); track chrctr.id; let idx = $index) {
+          <li class="">
+            <code>{{ idx + 1 }}</code>
+            <span>{{ chrctr.name }}</span>
+            <strong class="pico-color-pink-500">({{ chrctr.power }})</strong>
+          </li>
+        }
+      </ul>
+    </article>
+  </section>
+</article>

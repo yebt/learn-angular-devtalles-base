@@ -25,7 +25,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/css/picocss.css",
+              "src/css/pico.colors.min.css"
             ]
           },
           "configurations": {
