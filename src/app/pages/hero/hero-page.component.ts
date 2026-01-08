@@ -20,6 +20,10 @@ export class HeroPageComponent {
     this.age.set(23);
   }
 
+  changeAge(){
+    this.age.set(99)
+  }
+
   resetForm() {
     this.name.set('Tony Stark');
     this.age.set(45);
