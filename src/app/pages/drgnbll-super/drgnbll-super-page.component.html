@@ -1,0 +1,55 @@
+<article>
+  <hgroup>
+    <h1>Drgn bll</h1>
+  </hgroup>
+
+  <section class="grid">
+    <form>
+      <h4>New</h4>
+      <label>
+        Name
+        <input
+          name="first_name" placeholder="Magin Bhu" autocomplete="given-name"
+          [value]="newCharacterName()"
+          #txtName
+          (input)="newCharacterName.set(txtName.value)"
+        />
+      </label>
+
+      <label>
+        Power
+        <input name="skill_name" placeholder="Gum expantion"
+          [value]="newCharacterPower()"
+          #txtPower
+          (input)="newCharacterPower.set(+txtPower.value)"
+        />
+      </label>
+
+      <input type="button" value="Save" (click)="addCharacter()" />
+    </form>
+
+    <article>
+      <h4>List</h4>
+      <ul >
+        @for (chrctr of characters(); track chrctr.id; let idx = $index) {
+          @if (chrctr.power > 1000) {
+            <li class="grid">
+              <code>{{ idx + 1 }}</code>
+              <span>{{ chrctr.name }}</span>
+              <strong
+                [class.pico-color-pink-500]="chrctr.power > 9000"
+                [class.pico-color-blue-500]="chrctr.power < 5000"
+              >
+                <!-- [ngClass]="powerClasses()" -->
+                <!-- asdfasd -->
+                ({{ chrctr.power }})
+              </strong>
+            </li>
+          } @else {
+            <li class="grid">Low power</li>
+          }
+        }
+      </ul>
+    </article>
+  </section>
+</article>

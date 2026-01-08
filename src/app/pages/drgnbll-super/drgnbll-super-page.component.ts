@@ -8,27 +8,17 @@ interface BCharacter {
 }
 
 @Component({
-  templateUrl: './drgnbll-page.component.html',
-  imports: [
-    // NgClass
-  ],
+  templateUrl: './drgnbll-super-page.component.html',
 })
-export class DrgnbllPageComponent {
+export class DrgnbllPageSuperComponent {
   newCharacterName = signal('');
   newCharacterPower = signal(0);
 
   characters = signal<BCharacter[]>([
     { id: 1, name: 'Goku', power: 9001 },
-    // { id: 2, name: 'Vegeta', power: 8000 },
-    // { id: 3, name: 'Piccolo', power: 3000 },
-    // { id: 4, name: 'Yamcha', power: 900 },
+    { id: 2, name: 'Vegeta', power: 8000 },
   ]);
 
-  // powerClasses = computed(()=>{
-  //   return {
-  //     'pico-color-pink-500': true
-  //   }
-  // })
   addCharacter() {
     if (
       //
@@ -47,11 +37,11 @@ export class DrgnbllPageComponent {
 
     // this.characters().push(newCharacter);
     this.characters.update((lst) => [...lst, newCharacter]);
-    this.reseteFields()
+    this.reseteFields();
   }
 
-  reseteFields(){
-    this.newCharacterPower.set(0)
-    this.newCharacterName.set("")
+  reseteFields() {
+    this.newCharacterPower.set(0);
+    this.newCharacterName.set('');
   }
 }
