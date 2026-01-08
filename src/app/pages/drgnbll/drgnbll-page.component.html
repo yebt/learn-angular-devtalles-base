@@ -8,15 +8,24 @@
       <h4>New</h4>
       <label>
         Name
-        <input name="first_name" placeholder="Magin Bhu" autocomplete="given-name" />
+        <input
+          name="first_name" placeholder="Magin Bhu" autocomplete="given-name"
+          [value]="newCharacterName()"
+          #txtName
+          (input)="newCharacterName.set(txtName.value)"
+        />
       </label>
 
       <label>
-        Skill
-        <input name="skill_name" placeholder="Gum expantion" />
+        Power
+        <input name="skill_name" placeholder="Gum expantion"
+          [value]="newCharacterPower()"
+          #txtPower
+          (input)="newCharacterPower.set(+txtPower.value)"
+        />
       </label>
 
-      <input type="submit" value="Save" />
+      <input type="button" value="Save" (click)="addCharacter()" />
     </form>
 
     <article>
