@@ -9,8 +9,6 @@ import { CharacterAddComponent } from '../../components/drgnbll-super/character-
   imports: [CharacterList, CharacterAddComponent],
 })
 export class DrgnbllPageSuperComponent {
-  newCharacterName = signal('');
-  newCharacterPower = signal(0);
 
   characters = signal<BCharacter[]>([
     { id: 1, name: 'Goku', power: 9001 },
