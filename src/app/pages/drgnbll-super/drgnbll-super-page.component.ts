@@ -1,14 +1,12 @@
 import { NgClass } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
+import { CharacterList } from "../../components/drgnbll-super/character-list/character-list.components";
+import { BCharacter } from '../../interfaces/character.interface';
 
-interface BCharacter {
-  id: number;
-  name: string;
-  power: number;
-}
 
 @Component({
   templateUrl: './drgnbll-super-page.component.html',
+  imports: [CharacterList]
 })
 export class DrgnbllPageSuperComponent {
   newCharacterName = signal('');

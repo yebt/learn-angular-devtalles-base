@@ -1,0 +1,23 @@
+<article>
+  <h4>List strong characters</h4>
+  <ul>
+    @for (chrctr of characters(); track chrctr.id; let idx = $index) {
+      @if (chrctr.power > 1000) {
+        <li class="">
+          <code>{{ idx + 1 }}</code>
+          <span>{{ chrctr.name }}</span>
+          <strong
+            [class.pico-color-pink-500]="chrctr.power > 9000"
+            [class.pico-color-blue-500]="chrctr.power < 5000"
+          >
+            <!-- [ngClass]="powerClasses()" -->
+            <!-- asdfasd -->
+            ({{ chrctr.power }})
+          </strong>
+        </li>
+      } @else {
+        <li class="grid">Low power</li>
+      }
+    }
+  </ul>
+</article>
