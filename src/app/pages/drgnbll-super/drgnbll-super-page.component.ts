@@ -1,8 +1,7 @@
-import { NgClass } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CharacterList } from '../../components/drgnbll-super/character-list/character-list.components';
-import { BCharacter } from '../../interfaces/character.interface';
 import { CharacterAddComponent } from '../../components/drgnbll-super/character-add/character-add.component';
+import { DragonballsService } from '../../services/dragonball-characters.service';
 
 @Component({
   templateUrl: './drgnbll-super-page.component.html',
@@ -10,12 +9,6 @@ import { CharacterAddComponent } from '../../components/drgnbll-super/character-
 })
 export class DrgnbllPageSuperComponent {
 
-  characters = signal<BCharacter[]>([
-    { id: 1, name: 'Goku', power: 9001 },
-    { id: 2, name: 'Vegeta', power: 8000 },
-  ]);
+  public drgnbllService = inject(DragonballsService)
 
-  addCharacter(characterToAdd: BCharacter) {
-    this.characters.update((list) => [...list, characterToAdd]);
-  }
 }

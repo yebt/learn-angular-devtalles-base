@@ -5,11 +5,12 @@
 
   <section class="grid">
     <div>
-      <dragonball-character-add
-        (onNewCharacter)="addCharacter($event)"
-      />
+      <dragonball-character-add (onNewCharacter)="drgnbllService.addCharacter($event)" />
     </div>
 
-    <dragonball-character-list listName="List of characters" [characters]="characters()" />
+    <dragonball-character-list
+      listName="List of characters"
+      [characters]="drgnbllService.characters()"
+    />
   </section>
 </article>
